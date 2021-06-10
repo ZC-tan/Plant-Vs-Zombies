@@ -1,7 +1,6 @@
 package main;
 
 
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -9,22 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import plant.*;
 import utility.MainMenuController;
-import utility.Sprite;
 import utility.Sun;
-import zombie.Zombie;
 
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Objects;
 
 import static main.Game.*;
 import static utility.Constant.*;
@@ -128,7 +121,7 @@ public class Main extends Application {
         currentStage = stage;
 
         //song
-        Media media = new Media(Main.class.getResource("/resources/Music/game1.mp3").toString());
+        Media media = new Media(Objects.requireNonNull(Main.class.getResource("/resources/Music/game1.mp3")).toString());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
 

@@ -136,7 +136,7 @@ public class Zombie extends Sprite {
     }
 
     public void updateHealthBar(GraphicsContext context, int zombieType){
-        double healthBarWidth=80;
+        double healthBarWidth=60;
         double healthBarHeight=6;
         double healthPercentage;
         if(zombieType==1){

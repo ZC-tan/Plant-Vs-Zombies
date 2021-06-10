@@ -15,11 +15,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class LawnMower extends Sprite{
     private boolean go = false;
-    private static LawnMower LawnMower1 = new LawnMower(-15,100,1);
-    private static LawnMower LawnMower2 = new LawnMower(-15,200,2);
-    private static LawnMower LawnMower3 = new LawnMower(-15,290,3);
-    private static LawnMower LawnMower4 = new LawnMower(-15,390,4);
-    private static LawnMower LawnMower5 = new LawnMower(-15,490,5);
     private static CopyOnWriteArrayList<LawnMower> lawnMowers = new CopyOnWriteArrayList<>();
 
     /**
@@ -56,7 +51,7 @@ public class LawnMower extends Sprite{
             }
         }
         if(go == true){
-            this.positionX += 2.5;
+            this.positionX += 5;
         }
         if(this.positionX>=800){
             Game.lawnMowers.remove(this);
@@ -64,12 +59,17 @@ public class LawnMower extends Sprite{
         this.render(context);
     }
 
+    /**
+     * 初始化LawnMower的方法
+     * @return
+     */
     public static CopyOnWriteArrayList<LawnMower> initialize(){
-        lawnMowers.add(LawnMower1);
-        lawnMowers.add(LawnMower2);
-        lawnMowers.add(LawnMower3);
-        lawnMowers.add(LawnMower4);
-        lawnMowers.add(LawnMower5);
+        lawnMowers.clear();
+        lawnMowers.add(new LawnMower(-15,100,1));
+        lawnMowers.add(new LawnMower(-15,200,2));
+        lawnMowers.add(new LawnMower(-15,290,3));
+        lawnMowers.add(new LawnMower(-15,390,4));
+        lawnMowers.add(new LawnMower(-15,490,5));
         return lawnMowers;
     }
 }
